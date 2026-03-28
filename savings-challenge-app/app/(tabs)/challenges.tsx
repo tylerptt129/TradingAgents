@@ -8,6 +8,7 @@ import {
   Alert,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter } from 'expo-router';
 import { useApp } from '../../src/context/AppContext';
 import { CHALLENGE_TEMPLATES } from '../../src/constants/challenges';
 import { ChallengeCard } from '../../src/components/ChallengeCard';
@@ -16,6 +17,7 @@ import { formatCurrency } from '../../src/utils/helpers';
 
 export default function ChallengesScreen() {
   const { startChallenge, activeChallenges, profile } = useApp();
+  const router = useRouter();
 
   const isAlreadyActive = (templateId: string) =>
     activeChallenges.some((c) => c.templateId === templateId);
@@ -94,7 +96,7 @@ export default function ChallengesScreen() {
 
         {/* Upgrade Banner */}
         {!profile.isPremium && (
-          <TouchableOpacity style={styles.upgradeBanner}>
+          <TouchableOpacity style={styles.upgradeBanner} onPress={() => router.push('/premium')}>
             <Text style={styles.upgradeIcon}>⚡</Text>
             <View style={styles.upgradeContent}>
               <Text style={styles.upgradeTitle}>Upgrade to Premium</Text>
@@ -102,7 +104,7 @@ export default function ChallengesScreen() {
                 Unlimited challenges, advanced analytics, all badges
               </Text>
             </View>
-            <Text style={styles.upgradePrice}>$4.99/mo</Text>
+            <Text style={styles.upgradePrice}>$0.99</Text>
           </TouchableOpacity>
         )}
 

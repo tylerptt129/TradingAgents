@@ -8,6 +8,7 @@ import {
   Alert,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter } from 'expo-router';
 import { useApp } from '../../src/context/AppContext';
 import { StatCard } from '../../src/components/StatCard';
 import { COLORS, SPACING, FONT_SIZE, BORDER_RADIUS } from '../../src/constants/theme';
@@ -16,20 +17,10 @@ import * as Storage from '../../src/storage';
 
 export default function ProfileScreen() {
   const { profile, updateProfile, refreshData } = useApp();
+  const router = useRouter();
 
   const handleUpgrade = () => {
-    // In production, this would trigger IAP
-    Alert.alert(
-      'Upgrade to Premium',
-      '$4.99/month — Unlimited challenges, advanced analytics, all badges, and more!',
-      [
-        { text: 'Not Now', style: 'cancel' },
-        {
-          text: 'Subscribe',
-          onPress: () => updateProfile({ isPremium: true }),
-        },
-      ],
-    );
+    router.push('/premium');
   };
 
   const handleResetData = () => {
@@ -114,7 +105,7 @@ export default function ProfileScreen() {
                   Unlock unlimited challenges & badges
                 </Text>
               </View>
-              <Text style={styles.upgradeButtonPrice}>$4.99/mo</Text>
+              <Text style={styles.upgradeButtonPrice}>$0.99</Text>
             </TouchableOpacity>
           )}
 

@@ -19,6 +19,10 @@ export default function RootLayout() {
           name="challenge/[id]"
           options={{ presentation: 'modal' }}
         />
+        <Stack.Screen
+          name="premium"
+          options={{ presentation: 'modal' }}
+        />
       </Stack>
     </AppProvider>
   );
