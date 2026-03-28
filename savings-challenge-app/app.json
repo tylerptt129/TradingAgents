@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "SaveQuest",
+    "slug": "savequest",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "savequest",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "backgroundColor": "#1a1a2e"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.savequest.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#1a1a2e"
+      },
+      "package": "com.savequest.app"
+    },
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}
