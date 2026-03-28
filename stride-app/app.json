@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Stride",
+    "slug": "stride-habits",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "stride",
+    "userInterfaceStyle": "dark",
+    "splash": { "backgroundColor": "#0A0A1A" },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.stride.habits",
+      "buildNumber": "1",
+      "infoPlist": { "ITSAppUsesNonExemptEncryption": false },
+      "config": { "usesNonExemptEncryption": false }
+    },
+    "android": {
+      "adaptiveIcon": { "backgroundColor": "#0A0A1A" },
+      "package": "com.stride.habits",
+      "versionCode": 1
+    },
+    "plugins": [
+      "expo-router",
+      ["expo-notifications", { "icon": "./assets/icon.png", "color": "#7C5CFC" }]
+    ],
+    "extra": { "eas": { "projectId": "YOUR_EAS_PROJECT_ID" } }
+  }
+}
